@@ -21,43 +21,23 @@
             <artifactId>akka-actor_2.13</artifactId>
             <version>2.6.8</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.apache.maven.plugins</groupId>-->
-<!--            <artifactId>maven-assembly-plugin</artifactId>-->
-<!--            <version>3.3.0</version>-->
-<!--            <type>maven-plugin</type>-->
-<!--        </dependency>-->
     </dependencies>
 
     <build>
         <plugins>
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-jar-plugin</artifactId>-->
-<!--                <configuratsion>-->
-<!--                    <archive>-->
-<!--                        <manifest>-->
-<!--                            <addClasspath>true</addClasspath>-->
-<!--                            <mainClass>Entry</mainClass>-->
-<!--                        </manifest>-->
-<!--                    </archive>-->
-<!--                </configuratsion>-->
-<!--            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.3.0</version>
                 <configuration>
                     <archive>
-                                            <manifest>
-                                                <addClasspath>true</addClasspath>
-                                                <mainClass>Entry</mainClass>
-                                            </manifest>
-                                        </archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>Entry</mainClass>
+                        </manifest>
+                    </archive>
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
-<!--                                                    <addClasspath>true</addClasspath>-->
-<!--                                                    <mainClass>Entry</mainClass>-->
                     </descriptorRefs>
                 </configuration>
                 <executions>
@@ -69,9 +49,7 @@
                         </goals>
                     </execution>
                 </executions>
-
             </plugin>
         </plugins>
     </build>
-
 </project>
