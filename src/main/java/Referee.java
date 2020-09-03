@@ -13,7 +13,7 @@ public class Referee extends AbstractActor {
 
     public Receive createReceive() {
         return receiveBuilder()
-                .match(StartGame.class, m -> {
+                .match(Start.class, m -> {
                     try {
                         player1.tell(new Message("test", 1), player2);
                     } catch (Exception ex) {

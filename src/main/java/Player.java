@@ -4,13 +4,13 @@ public class Player extends AbstractActor {
 
     private final String name;
 
-    private int hitsBeforeStop;
+    private final int messsagesBeforeStop;
 
-    private int hitCounter;
+    private int messageCounter;
 
-    public Player(String name, int hitsBeforeStop){
+    public Player(String name, int messsagesBeforeStop){
         this.name = name;
-        this.hitsBeforeStop = hitsBeforeStop;
+        this.messsagesBeforeStop = messsagesBeforeStop;
     }
 
     public Receive createReceive() {
@@ -18,11 +18,11 @@ public class Player extends AbstractActor {
                 .match(Message.class, m -> {
                     try {
                         Thread.sleep(200);
-                        hitCounter++;
+                        messageCounter++;
                         final int counter = m.getCounter();
-                        if(hitCounter <= hitsBeforeStop || hitsBeforeStop < 0) {
-                            System.out.println(String.format("%s got message number %d", name, hitCounter));
-                            if(hitsBeforeStop > 0 && hitCounter >= hitsBeforeStop) {
+                        if(messageCounter <= messsagesBeforeStop || messsagesBeforeStop < 0) {
+                            System.out.println(String.format("%s got message number %d", name, messageCounter));
+                            if(messsagesBeforeStop > 0 && messageCounter >= messsagesBeforeStop) {
                                 System.out.println(String.format("%s took the last hit", name));
                                 getContext().getSystem().terminate();
                             }

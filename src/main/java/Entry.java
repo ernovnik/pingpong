@@ -11,7 +11,7 @@ public class Entry {
         ActorRef player2
                 = system.actorOf(Props.create(Player.class,"Player2", -1), "Player2");
         ActorRef referee = system.actorOf(Props.create(Referee.class,player1, player2), "Referee");
-        referee.tell(new StartGame(), ActorRef.noSender());
+        referee.tell(new Start(), ActorRef.noSender());
     }
 
 }
